@@ -12,12 +12,11 @@ public class Oso extends Actor
      * Act - do whatever the Oso wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    private int desplazamiento = 0; //Creo una variable entera que se incrementara al llamar al metodo act
-    private int rotation = 0;
     
     public void act()
     {
         checkKeyPress();
+        isTouchingATree();
     }
     
      public void checkKeyPress() {
@@ -39,5 +38,11 @@ public class Oso extends Actor
             move(5);
         }
         // Puedes agregar más condicionales para otras teclas si lo deseas.
+    }
+    
+    public void isTouchingATree(){
+        if (isTouching(Arbol.class)){
+            System.out.println("Esta tocando un arbol");
+        }
     }
 }
