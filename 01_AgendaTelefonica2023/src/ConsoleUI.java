@@ -14,6 +14,10 @@ public class ConsoleUI {
 	public ConsoleUI() {
 		miAgenda = new Agenda("Moises Alonso");
 	}
+	
+	public ConsoleUI(String owner) {
+		miAgenda = new Agenda(owner);
+	}
 
 	public void showMenu() {
 		String opt = "";
@@ -24,7 +28,7 @@ public class ConsoleUI {
 			System.out.println("2. Guardar Nuevo Contacto");
 			System.out.println("3. Salir");
 			
-			Scanner in = new Scanner(System.in);
+			Scanner in = new Scanner(System.in); //Lectura de datos desde la consola Entrada Estandar
 			opt = in.nextLine();
 			
 			if (opt.equals("1")) {

@@ -17,16 +17,27 @@ public class Oso extends Actor
     
     public void act()
     {
-        desplazamiento++;    //Incremento la variable de 1 en 1
-        if (desplazamiento >= 10) //Condicional Si desplazamiento es mayor o igual a 20
-        {
-            rotation = rotation + 90;
-            rotation = rotation % 360;
-            desplazamiento = 0;  //El desplazamiento regresa 0
-            setRotation(rotation);   //Rota 180 grados para ir en sentido inverso
+        checkKeyPress();
+    }
+    
+     public void checkKeyPress() {
+        // Utiliza el objeto de clase Greenfoot para verificar si se ha presionado alguna tecla
+        if (Greenfoot.isKeyDown("up")) {
+            setRotation(270);
+            move(5);
         }
-        System.out.println("Desplazamiento" + desplazamiento);
-        System.out.println("Rotacion " + getRotation());
-        move(5);// Add your action code here.
+        if (Greenfoot.isKeyDown("down")) {
+            setRotation(90);
+            move(5);
+        }
+        if (Greenfoot.isKeyDown("left")) {
+            setRotation(180);
+            move(5);
+        }
+        if (Greenfoot.isKeyDown("right")) {
+            setRotation(0);
+            move(5);
+        }
+        // Puedes agregar más condicionales para otras teclas si lo deseas.
     }
 }
