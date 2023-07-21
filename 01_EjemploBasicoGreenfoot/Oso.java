@@ -16,7 +16,6 @@ public class Oso extends Actor
     public void act()
     {
         checkKeyPress();
-        isTouchingATree();
     }
     
      public void checkKeyPress() {

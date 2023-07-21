@@ -1,5 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.Random;
+import java.util.List;
 
 /**
  * Write a description of class MyWorld here.
@@ -14,6 +15,10 @@ public class MyWorld extends World
      * Constructor for objects of class MyWorld.
      * 
      */
+    
+    public int puntos; //Lleva la cantidad de puntos
+    public Etiqueta etiquetaPuntos;  //Sirve para mostrar la cantidad de puntos
+    
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -37,8 +42,9 @@ public class MyWorld extends World
             addObject(new Arbol(), randomPosicionX, randomPosicionY);
         }
         
-        Etiqueta etiqueta = new Etiqueta("¡Hola, Greenfoot!", 24, Color.BLACK);
-        addObject(etiqueta, getWidth() / 2, getHeight() / 2);
+        puntos = 0;
+        etiquetaPuntos = new Etiqueta("" + puntos, 24, Color.BLACK);
+        addObject(etiquetaPuntos, getWidth() / 2, getHeight() / 2);
         
     }
 }

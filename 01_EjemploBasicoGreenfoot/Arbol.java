@@ -14,6 +14,15 @@ public class Arbol extends Actor
      */
     public void act()
     {
-        // Add your action code here.
+        haveBeenEaten();
+    }
+    
+    public void haveBeenEaten(){
+        if (isTouching(Oso.class)){ //Cada arbol detect si esta siendo comido por un oso
+            MyWorld miMundo = (MyWorld) getWorld(); //Obtengo el mundo actual pero lo tengo que "castear" o convertir a mi mundo personalizado
+            miMundo.puntos++;  //Incremento los puntos
+            miMundo.etiquetaPuntos.actualizarImagen("" + miMundo.puntos);  //Actualizo la imagen
+            miMundo.removeObject(this); //Elimino al arbol que esta siendo llamado
+        }
     }
 }

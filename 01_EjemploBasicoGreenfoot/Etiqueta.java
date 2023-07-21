@@ -17,14 +17,14 @@ public class Etiqueta extends Actor
         this.texto = texto;
         this.tamañoFuente = tamañoFuente;
         this.colorTexto = colorTexto;
-        actualizarImagen();
+        actualizarImagen(texto);
     }
 
     public void act() {
         // Puedes agregar aquí cualquier comportamiento específico que desees para la etiqueta
     }
 
-    public void actualizarImagen() {
+    public void actualizarImagen(String texto) {
         GreenfootImage imagen = new GreenfootImage(texto, tamañoFuente, colorTexto, null);
         setImage(imagen);
     }
