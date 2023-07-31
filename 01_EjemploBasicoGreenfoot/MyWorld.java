@@ -18,13 +18,21 @@ public class MyWorld extends World
     
     public int puntos; //Lleva la cantidad de puntos
     public Etiqueta etiquetaPuntos;  //Sirve para mostrar la cantidad de puntos
+    private Oso protagonista;
+    private Enemigo miEnemigo;
+    
+    public Oso getProtagonista(){
+        return protagonista;
+    }
     
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
+        protagonista = new Oso();
+        
         //Adding actors
-        addObject(new Oso(), 100, 100);
+        addObject(protagonista, 100, 100);
         
         
         //Crear los arboles en posiciones aleatorias, codigo con apoyo de ChatGPT
@@ -34,6 +42,14 @@ public class MyWorld extends World
         Random random = new Random();
         // Genera un número aleatorio entre min (inclusive) y max (exclusive)
         
+        int angulo = 0;
+        for (int i = 0; i < 5; i++){
+            angulo += 90; //angulo = angulo + 90;
+    
+            int randomPosicionX = random.nextInt(600 - 1) + 1;
+            int randomPosicionY = random.nextInt(400 - 1) + 1;
+            addObject(new Arbol(angulo), randomPosicionX, randomPosicionY);
+        }
         
         for (int i = 0; i < 5; i++){
     
@@ -45,6 +61,9 @@ public class MyWorld extends World
         puntos = 0;
         etiquetaPuntos = new Etiqueta("" + puntos, 24, Color.BLACK);
         addObject(etiquetaPuntos, getWidth() / 2, getHeight() / 2);
+        
+        miEnemigo = new Enemigo();
+        addObject(miEnemigo, 300, 300);
         
     }
 }
