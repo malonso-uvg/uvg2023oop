@@ -1,0 +1,13 @@
+En código java quiero una clase llamada "Analizer" con un método estático
+llamado "Analize" el cuál recibe un parámetro llamado "allWords" de tipo ArrayList
+de Strings, que contiene varias palabras, el método debe recorrer todo el ArrayList
+buscando las palabras palíndromas, cada palabra palíndroma la guarda en otro ArrayList
+de Strings el cual deberá devolver al final del método.
+
+Necesito una clase llamada "FilesManager" que tenga un método llamado "readFiles" que recibe
+un parámetro llamado "path" en donde se encuentra la ubicación de un archivo de tipo .csv, este método
+leerá el archivo y guardará todas las palabras separadas por coma en un ArrayList de Strings que tendrá todas 
+las palabras del archivo. Además tendrá otro método llamado writeFiles que recibe dos parámetros, el primer parámetro
+es de tipo String llamado "path" que tendrá el directorio del archivo typo csv cuyo contenido
+será el 2do parámetro de tipo ArrayList<String> todas los elementos del ArrayList son palabras
+que deben ser escritas en el archivo .csv
