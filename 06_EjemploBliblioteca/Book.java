@@ -13,6 +13,15 @@ public class Book{
         setISBN(ISBN);
     }
 
+    
+    @Override
+    public String toString() {
+        
+        return "Titulo > " + title + " ISBN > " + ISBN;
+    }
+
+
+
     public String getTitle() {
         return title;
     }
