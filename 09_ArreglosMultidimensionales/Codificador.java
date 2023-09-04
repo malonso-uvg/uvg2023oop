@@ -1,14 +1,27 @@
 public class Codificador {
 
     public static String codificar(String mensaje){
-        String[][] matrizOriginal = calcularMatriz(mensaje);
+        String mensajeEmperador = corrimientoLetras(1, mensaje);
+        String[][] matrizOriginal = calcularMatriz(mensajeEmperador);
         String[][] matrizTranspuesta = calcularMatrizTranspuesta(matrizOriginal);
         String mensaje_codificado = obtenerCadenaCodificada(matrizTranspuesta);
         return mensaje_codificado;
     }
 
     public static String decodificar(String mensaje_codificado){
-        return "";   
+       String mensajeEmperador = corrimientoLetras(-1, mensaje_codificado);
+        String[][] matrizOriginal = calcularMatriz(mensajeEmperador);
+        String[][] matrizTranspuesta = calcularMatrizTranspuesta(matrizOriginal);
+        String mensaje = obtenerCadenaCodificada(matrizTranspuesta);
+        return mensaje;
+    }
+
+    public static String corrimientoLetras(int qty, String mensaje){
+        String newCadena = "";
+        for (int i = 0; i < mensaje.length(); i++){
+            newCadena += "" + (char)((int)mensaje.charAt(i) + qty);
+        }
+        return newCadena;
     }
 
     public static String[][] calcularMatriz(String message){
