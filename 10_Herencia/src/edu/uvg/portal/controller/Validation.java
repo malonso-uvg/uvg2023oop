@@ -23,7 +23,12 @@ public class Validation {
 		usuarios.add(new Estudiante("alo171164", "Test123"));
 	}
 	
-	public boolean userHasAccess(User user) {
-		
+	public User userHasAccess(String username, String password) {
+		for (User usuario: usuarios) {
+			if (usuario.login(username, password)) {
+				return usuario;
+			}
+		}
+		return null;
 	}
 }
