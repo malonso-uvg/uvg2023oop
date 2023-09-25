@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * @author MAAG
  *
  */
-public class Docente extends User {
+public class Docente extends User implements IAdministrable{
 
 	private ArrayList<Curso> nombramientos;
 	
@@ -46,6 +46,15 @@ public class Docente extends User {
 		for (int i = 0; i < nombramientos.size(); i++) {
 			System.out.println(nombramientos.get(i).toString());
 		}
+	}
+
+
+
+	@Override
+	public void pagoDeSalario(double salario) {
+		// TODO Auto-generated method stub
+		System.out.println("Salario: " + salario + " descuento ISR " + salario*0.05 + " Salario liquido: " + salario*0.95);
+		
 	}
 
 }
