@@ -1,0 +1,7 @@
+{
+    "java.project.sourcePaths": [
+        "com.juego.controller",
+        "com.juego.model",
+        "com.juego.view"
+    ]
+}

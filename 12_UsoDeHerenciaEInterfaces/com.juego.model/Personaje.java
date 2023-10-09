@@ -79,8 +79,9 @@ public class Personaje implements IHabilidadEspecial{
     }
 
     @Override
-    public void usarHabilidadUnica() {
+    public String usarHabilidadUnica() {
         setHp(getHp() - 10); //Se reduce su nivel de vida debido al uso de esta habilidad
+        return "Uso de la habilidad le restó 10 puntos de vida ";
     }
 
     @Override

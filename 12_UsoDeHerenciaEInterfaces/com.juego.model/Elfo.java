@@ -4,7 +4,7 @@ public class Elfo extends Personaje{
 
     public Elfo(String nombre) {
         super(nombre);
-        setRaza(MAGO);
+        setRaza(ELFO);
         fuerza = 1;
     }
 
@@ -36,9 +36,9 @@ public class Elfo extends Personaje{
     }
 
     @Override
-    public void usarHabilidadUnica() {
-        super.usarHabilidadUnica();
+    public String usarHabilidadUnica() {
         fuerza++;
+        return super.usarHabilidadUnica() + " La fuerza se ha incrementado, ahora es: " + fuerza;
     }
 
     @Override

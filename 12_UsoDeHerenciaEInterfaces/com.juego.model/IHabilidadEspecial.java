@@ -1,5 +1,5 @@
 public interface IHabilidadEspecial{
     int atacar(Personaje objetivo);
-    void usarHabilidadUnica();
+    String usarHabilidadUnica();
     void recibirDanio(int danio);
 }

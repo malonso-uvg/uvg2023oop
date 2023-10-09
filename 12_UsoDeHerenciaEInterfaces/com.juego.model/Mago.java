@@ -51,9 +51,9 @@ public class Mago extends Personaje{
     }
 
     @Override
-    public void usarHabilidadUnica() {
-        super.usarHabilidadUnica();  //Reduce el hp del usuario
+    public String usarHabilidadUnica() {
         rango = 1;
+        return super.usarHabilidadUnica() + " Ahora es un Mago Blanco";  //Reduce el hp del usuario
     }
 
     @Override

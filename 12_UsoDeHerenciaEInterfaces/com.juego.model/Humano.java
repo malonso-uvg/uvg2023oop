@@ -5,7 +5,7 @@ public class Humano extends Personaje{
 
     public Humano(String nombre) {
         super(nombre);
-        setRaza(MAGO);
+        setRaza(HUMANO);
         tieneEspada = false;
         tieneEscudo = true;
     }
@@ -55,10 +55,19 @@ public class Humano extends Personaje{
     }
 
     @Override
-    public void usarHabilidadUnica() {
-        super.usarHabilidadUnica();
+    public String usarHabilidadUnica() {
+       
         tieneEspada = !tieneEspada;
         tieneEscudo = !tieneEscudo;
+
+        String arma = "";
+        if (tieneEspada)
+            arma = "Espada";
+        else
+            arma = "Escudo";
+        
+
+        return  super.usarHabilidadUnica() + " El humano está utilinado: " + arma;
     }
 
     @Override
